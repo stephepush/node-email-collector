@@ -6,6 +6,8 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+const PORT = process.env.PORT || 3000;
+
 app.use(bodyParser.urlencoded({extended: false}))
 
 //app.use(express.static('./public'));
@@ -29,6 +31,6 @@ app.get('/about', (req, res)=>{
     res.render('pages/about')
 })
 
-app.listen(3000, ()=>{
-    console.log("Server is up and listening on port 3000")
+app.listen(PORT, ()=>{
+    console.log(`Server is up and listening on port ${PORT}...`)
 });
