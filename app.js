@@ -19,6 +19,16 @@ app.get('/', (req, res)=>{
     res.render('pages/index')
 });
 
+app.get('/subscribe', (req, res)=>{
+    //res.send("HAHA! Soon to be a subscribe view!")
+    res.render('pages/subscribe')
+});
+
+app.get('/about', (req, res)=>{
+    //res.send("haha! Soon to be the about view!")
+    res.render('pages/about')
+})
+
 app.listen(3000, ()=>{
     console.log("Server is up and listening on port 3000")
-})
+});
