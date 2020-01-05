@@ -16,20 +16,11 @@ app.use(morgan('short'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res)=>{
-    //res.send("Hello from your local node server")
-    res.render('pages/index')
-});
+app.use(require('./routes'));
 
-app.get('/subscribe', (req, res)=>{
-    //res.send("HAHA! Soon to be a subscribe view!")
-    res.render('pages/subscribe')
-});
 
-app.get('/about', (req, res)=>{
-    //res.send("haha! Soon to be the about view!")
-    res.render('pages/about')
-})
+
+
 
 app.listen(PORT, ()=>{
     console.log(`Server is up and listening on port ${PORT}...`)
