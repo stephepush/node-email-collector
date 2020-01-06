@@ -16,7 +16,10 @@ app.use(morgan('short'));
 
 app.set('view engine', 'ejs');
 
+
+
 app.use(require('./routes'));
+
 
 
 

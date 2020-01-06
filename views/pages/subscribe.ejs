@@ -3,21 +3,21 @@
 
 <main class="container">
     <h1>Subscribe Here</h1>
-    <form action="POST" >
+    <form action="subscribe/subscribed" method="POST" >
         <div class="form-row">
             <div class="form-group col-md-6 col-sm-10  col-xs-10">
                 <label for="firstName2">First Name</label>
-                <input type="text" class="form-control" id="firstName2">
+                <input type="text" class="form-control" id="firstName2" name="firstName">
             </div>
             <div class="form-group col-md-6 col-sm-10 col-xs-10">
                 <label for="lastName2">Last Name</label>
-                <input type="text" class="form-control" id="lastName2">
+                <input type="text" class="form-control" id="lastName2" name="lastName">
             </div>
         </div>
         
         <div class="form-group ">
             <label for="email1">Email</label>
-            <input type="email" class="form-control" id="email1">
+            <input type="email" class="form-control" id="email1" name="email">
         </div>
         <button class="btn btn-primary">Submit</button>
     </form>  

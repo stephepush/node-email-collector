@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 const Pool = require('pg').Pool
 
 const pool = new Pool({
@@ -14,6 +15,13 @@ const pool = new Pool({
 router.get('/', (req, res)=>{
     res.render('pages/subscribe')
 });
+
+router.post('/subscribed', (req, res)=>{
+    let parsedFirstName = req.body.firstName;
+    let parsedLastName = req.body.lastName;
+    let parsedEmail = req.body.email;
+    console.log(`First name: ${parsedFirstName} \n Last name: ${parsedLastName} \n Email: ${parsedEmail}`)
+})
 
 
 module.exports = router;
