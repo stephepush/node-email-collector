@@ -20,17 +20,18 @@ router.post('/subscribed', (req, res)=>{
     let parsedFirstName = req.body.firstName;
     let parsedLastName = req.body.lastName;
     let parsedEmail = req.body.email;
-    pool.query('INSERT INTO users (first_name, last_name, email) VALUES ($1, $2, $3)', [parsedFirstName, parsedLastName, parsedEmail], (error, results) => {
+    const now = new Date()
+    pool.query('INSERT INTO users (first_name, last_name, email, timestamp) VALUES ($1, $2, $3, $4)', [parsedFirstName, parsedLastName, parsedEmail, now], (error, results) => {
         if(error) {
             throw error
         }
-        res.status(200).send(`User added with ID`)
+        res.status(200).send(`Thanks for submitting your info, ${parsedFirstName}!`)
         console.log(`First name: ${parsedFirstName} \n Last name: ${parsedLastName} \n Email: ${parsedEmail}`)
         
     })
     
-    res.send(`Thanks for submitting your info, ${parsedFirstName}!`);
-    res.end();
+    //res.send(`Thanks for submitting your info, ${parsedFirstName}!`);
+    //res.end();
 })
 
 
