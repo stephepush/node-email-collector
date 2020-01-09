@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
+var db = require('../db');
 
-
+/* 
 const Pool = require('pg').Pool
 
 const pool = new Pool({
@@ -10,7 +11,7 @@ const pool = new Pool({
     database: 'email-collector',
     password: '_6jrF4U&6nuYe>&*SWJbT:3s!:)WeiL~k^b^4b+a[yRD!',
     port: 5432,
-})
+}) */
 
 router.get('/', (req, res)=>{
     res.render('pages/subscribe')
@@ -21,7 +22,7 @@ router.post('/subscribed', (req, res)=>{
     let parsedLastName = req.body.lastName;
     let parsedEmail = req.body.email;
     const now = new Date()
-    pool.query('INSERT INTO users (first_name, last_name, email, timestamp) VALUES ($1, $2, $3, $4)', [parsedFirstName, parsedLastName, parsedEmail, now], (error, results) => {
+    db.query('INSERT INTO users (first_name, last_name, email, timestamp) VALUES ($1, $2, $3, $4)', [parsedFirstName, parsedLastName, parsedEmail, now], (error, results) => {
         if(error) {
             throw error
         }
