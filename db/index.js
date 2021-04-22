@@ -1,11 +1,11 @@
 const Pool = require('pg').Pool
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'email-collector',
+    user: process.env.DATABASE_USER,
+    host: process.env.DATABASE_URL,
+    database: process.env.DATABASE_NAME,
     password: process.env.DB_KEY,
-    port: 5432,
+    port: process.env.DB_PORT
 })
 
 
