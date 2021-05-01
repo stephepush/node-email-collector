@@ -1,3 +1,4 @@
+/* 
 const Pool = require('pg').Pool
 
 const pool = new Pool({
@@ -7,7 +8,16 @@ const pool = new Pool({
     password: process.env.DB_KEY,
     port: process.env.DB_PORT
 })
+ */
+
+const { Client } = require('pg');
+
+const client = new Client({
+    connectionString: process.env.DATABASE_URL
+});
+
+client.connect();
 
 
-
-module.exports = pool;
+//module.exports = pool;
+module.exports = client;
