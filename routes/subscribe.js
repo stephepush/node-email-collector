@@ -1,4 +1,5 @@
 const express = require('express');
+const client = require('../db');
 const router = express.Router();
 var db = require('../db');
 
@@ -29,8 +30,9 @@ router.post('/subscribed', (req, res)=>{
         res.status(200).send(`Thanks for submitting your info, ${parsedFirstName}!`)
         console.log(`First name: ${parsedFirstName} \n Last name: ${parsedLastName} \n Email: ${parsedEmail}`)
         
-    })
-    
+    }
+    )
+    //client.end();
     //res.send(`Thanks for submitting your info, ${parsedFirstName}!`);
     //res.end();
 })
