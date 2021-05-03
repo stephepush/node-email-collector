@@ -33,8 +33,8 @@ router.post('/subscribed', (req, res)=>{
     }
     )
     //client.end();
-    //res.send(`Thanks for submitting your info, ${parsedFirstName}!`);
-    //res.end();
+    res.send(`Thanks for submitting your info, ${parsedFirstName}!`);
+    res.end();
 })
 
 
