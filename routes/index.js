@@ -18,7 +18,7 @@ db.query(`SELECT count(*) AS exact_count from users`, (error,results) => {
 router.get('/', (req, res)=>{
     //res.send("Hello from your local node server")
     
-    res.render('pages/index', {userCount:results.rows[0]['exact_count']});
+    res.render('pages/index', {userCount:userCount});
 });
 
 module.exports = router;
