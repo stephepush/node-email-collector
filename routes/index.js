@@ -13,6 +13,7 @@ router.get('/', (req, res)=>{
     db.query(`SELECT count(*) AS exact_count from users`, (error,results) => {
         if (error) {
             //console.log(error.stack)
+            return res.render('pages/error', { error });
         } /* else {
             return userCount = results.rows[0]['exact_count']
             //console.log(userCount)
